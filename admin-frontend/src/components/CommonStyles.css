@@ -2,16 +2,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #f8e9d8;
 }
 
 .comman-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 600px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* margin-bottom: 15px; */
+  background-color: #f8e9d8;
 }
 
 .alert {
@@ -35,35 +35,36 @@ body {
 .comman-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 3px;
 }
 
 .comman-table th,
 .comman-table td {
   text-align: left;
   padding: 10px;
-  border: 1px solid #ddd;
+  text-align: center;
 }
 
 .comman-table th {
-  background-color: #f4f4f4;
+  background-color: #f28c28;
   font-weight: bold;
 }
 
-.comman-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.comman-table tr:hover {
-  background-color: #f1f1f1;
+.comman-table tr:nth-child(odd) {
+  background-color: #e0e0e0;
 }
 
 /* Button Styling */
+.add-button {
+  margin-top: 8px;
+  margin-left: 2px;
+}
 .add-button,
 .edit-button,
 .delete-button {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #1a2d50;
+  /* background-color: #f28c28; */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -76,7 +77,7 @@ body {
 .add-button:hover,
 .edit-button:hover,
 .delete-button:hover {
-  background-color: #0056b3;
+  background-color: #131b29;
 }
 
 .edit-button {
@@ -107,15 +108,47 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
+  /* Optional fade-in effect */
+  animation: fadeIn 0.3s ease;
 }
 
 .dialog-box {
-  background: #fff;
+  background-color: #1a2d50;
+  color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* Add scale-up animation */
+  transform: scale(0.7);
+  opacity: 0;
+  animation: scaleUp 0.3s ease forwards;
+}
+
+/* Keyframes for animations */
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dialog-box input,
+textarea,
+select {
+  background-color: #f8e9d8;
 }
 
 .dialog-box h2 {
@@ -143,6 +176,7 @@ body {
 }
 .form-group input,
 .form-group select,
+.form-group textarea,
 .form-group textarea {
   width: 100%;
   padding: 8px;
@@ -158,12 +192,13 @@ body {
 .dialog-actions button {
   padding: 10px 15px;
   margin-left: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #f28c28;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .dialog-actions button:hover {
@@ -171,6 +206,7 @@ body {
 }
 
 /* Add this to your existing CSS */
+/* Modal overlay with fade-in */
 .modal {
   position: fixed;
   top: 0;
@@ -180,23 +216,50 @@ body {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to the top */
+  align-items: flex-start;
   z-index: 1000;
-  overflow-y: auto; /* Enable scrollbar for the entire modal if needed */
-  padding-top: 20px; /* Add some padding from the top */
+  overflow-y: auto;
+  padding-top: 20px;
+
+  /* Fade-in background animation */
+  animation: fadeInOverlay 0.3s ease;
 }
 
+/* Modal content with scale-up animation */
 .modal-content {
-  background: #fff;
+  background-color: #1a2d50;
+  color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-height: 80vh; /* Limit the height of the dialog box */
-  overflow-y: auto; /* Enable scrollbar inside the dialog box */
-  margin-bottom: 20px; /* Add margin at the bottom */
+  max-height: 80vh;
+  overflow-y: auto;
+  margin-bottom: 20px;
   margin-top: 47px;
+
+  /* Animation for scale-up + fade-in */
+  transform: scale(0.7);
+  opacity: 0;
+  animation: scaleUpModal 0.3s ease forwards;
+}
+
+/* Keyframes */
+@keyframes scaleUpModal {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Ensure the modal content does not overflow */
@@ -219,6 +282,7 @@ body {
   border-radius: 4px;
   margin-bottom: 15px;
   font-size: 14px;
+  background-color: #f8e9d8;
 }
 
 .modal-actions {
@@ -227,16 +291,6 @@ body {
 
 .modal-actions .btn {
   margin-left: 10px;
-}
-
-/* Subjects container */
-.subjects-container {
-  max-height: 200px; /* Adjust this value as needed */
-  overflow-y: auto; /* Enable scrollbar for subjects */
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 15px;
 }
 
 .subject {
@@ -252,4 +306,25 @@ body {
 .subject input {
   width: 100px; /* Adjust input width as needed */
   margin-left: 10px;
+}
+
+.custom-swal-popup {
+  background-color: #1a2d50;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.custom-swal-title {
+  color: #fff; /* dark red text */
+  font-weight: bold;
+}
+
+.custom-swal-confirm {
+  background-color: #2563eb !important; /* override default button styles */
+  color: white !important;
+}
+
+.custom-swal-cancel {
+  background-color: #ef4444 !important;
+  color: white !important;
 }

@@ -18,13 +18,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background-color: linear-gradient(
-    135deg,
-    #eceef0 0%,
-    /* Blue */ #22ce69 30%,
-    /* Green */
-  );
-  background: linear-gradient(to right, #11f9d2, #cef813);
+  background-color: #1a2d50;
 }
 
 .app-header {
@@ -33,7 +27,7 @@ body {
   justify-content: center;
   font-size: 15px;
   font-weight: 600;
-  color: #1976d2;
+  color: #1a2d50;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -43,7 +37,7 @@ body {
 .app-main-content {
   width: 100%;
   max-width: 900px;
-  background-color: #fff;
+    background-color:  #f8e9d8;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

@@ -2,14 +2,14 @@
   padding: 20px;
   text-align: center;
   min-height: 100vh;
-  background: #f4f6f9;
+  background: #f8e9d8;
 }
 
 .home-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #077df2, #ee9b0c);
+  background: #f28c28;
   color: #fff;
   border-radius: 30px;
   padding: 10px 20px;

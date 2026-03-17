@@ -1,11 +1,12 @@
 .dashboard-container {
   display: flex;
   height: 100vh;
+  background: #f8e9d8;
 }
 
 .app-header {
-  background-color: #333;
-  color: white;
+  background-color: #1a2d50;
+  color: rgb(255, 255, 255);
   padding: 16px;
   display: flex;
   align-items: center;
@@ -33,7 +34,7 @@
 
 .sidebar {
   width: 240px;
-  background-color: #333;
+  background-color: #1a2d50;
   color: white;
   padding-top: 60px;
   position: fixed;
@@ -52,7 +53,7 @@
   padding: 20px;
   font-size: 1.2rem;
   text-align: center;
-  background-color: #444;
+  background-color: #16223a;
 }
 
 /* Sidebar Links */
@@ -63,6 +64,9 @@
   font-weight: 500;
   transition: all 0.3s ease-in-out;
   border-left: 4px solid transparent;
+  text-decoration: none;
+  color: white;
+  display: flex;
 }
 
 .menu-item a {
@@ -73,15 +77,14 @@
 }
 
 .menu-item:hover {
-  border-color: #dd7418;
-  border: 4px solid #1e90ff;
-  background-color: #1e90ff;
+  border-color: #f8e9d8;
+  border: 1px solid #1e90ff;
+  background-color: #f28c28;
   padding-left: 28px;
 }
 
 .menu-item.selected {
   background-color: rgba(255, 255, 255, 0.15);
-  border-left: 4px solid #1976d2;
 }
 
 .logout {
@@ -99,8 +102,9 @@
 }
 
 .main-content {
+  margin-top: 60px;
   margin-left: 240px;
-  padding: 20px;
+
   flex-grow: 1;
   transition: margin-left 0.3s;
 }
@@ -136,5 +140,5 @@
 }
 
 .add-button-container button:hover {
-  background-color: #145a9c;
+  background-color: #23d588;
 }
